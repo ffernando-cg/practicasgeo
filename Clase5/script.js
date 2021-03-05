@@ -36,10 +36,9 @@ var initMap = () => {
           long: posicion.coords.longitude
         }
 
-        var actualPosition = new google.maps.LatLng(pos.lat, pos.long);
 
-        marker.setPosition(actualPosition);
-        map.panTo(actualPosition);
+        marker.setPosition(pos);
+        map.panTo(pos);
         map.setCenter(pos);
       });
   }
