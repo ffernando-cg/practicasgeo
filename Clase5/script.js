@@ -21,7 +21,8 @@ var initMap = () => {
 
   var marker = new google.maps.Marker({
     position: coordenadas,
-    icon: icon
+    icon: icon,
+    map:map
   })
 
   if(navigator.geolocation){
@@ -33,7 +34,7 @@ var initMap = () => {
       navigator.geolocation.getCurrentPosition( posicion => {
         var pos = {
           lat: posicion.coords.latitude,
-          long: posicion.coords.longitude
+          lng: posicion.coords.longitude
         }
 
 
