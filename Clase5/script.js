@@ -34,9 +34,8 @@ var initMap = () => {
       navigator.geolocation.getCurrentPosition( posicion => {
         var pos = {
           lat: posicion.coords.latitude,
-          lng: posicion.coords.longitude
+          lng: posicion.coords.longitude,
         }
-
 
         marker.setPosition(pos);
         map.panTo(pos);
