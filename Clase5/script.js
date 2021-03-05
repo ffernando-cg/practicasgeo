@@ -10,8 +10,8 @@ var propiedades = {
   zoom: 20
 };
 
-var initMap = () => {
-  map = new google.maps.Map(document.getElementById('map'));
+var iniciaMapa = () => {
+  map = new google.maps.Map(document.getElementById('map'), propiedades);
   var icon = {
     url: 'https://media0.giphy.com/media/XBKaDapAVVwjT44Hcz/giphy.gif',
     scaledSize: new google.maps.Size(50,50),
@@ -22,11 +22,11 @@ var initMap = () => {
   var marker = new google.maps.Marker({
     position: coordenadas,
     icon: icon,
-    map:map
+    map: map
   })
 
   if(navigator.geolocation){
-    setInterval( () => { moveToPosition(marker); console.log('Se ha movido de posicion') }, 5000);
+    setInterval( function() { moveToPosition(marker); console.log('Se ha movido de posicion') }, 5000);
   }
 
   var moveToPosition = ( marker ) => {
