@@ -88,7 +88,7 @@ var iniciaMapa = () => {
                                 console.log
                                 let marker = new google.maps.Marker({
                                   map: map,
-                                  position: new google.maps.LatLng(marcador.countryInfo.lat, marcador.countryInfo.long),
+                                  position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CaptialLongitude),
                                   title: `${marcador.CountryName} : ${registro.cases}`
                                 });
                 
