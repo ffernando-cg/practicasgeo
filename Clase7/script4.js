@@ -67,7 +67,7 @@ var iniciaMapa = () => {
                 datos.forEach( marcador => {
 
 
-                    fetch('https://corona.lmao.ninja/v2/countries')
+                    fetch('https://corona.lmao.ninja/v3/covid-19/countries')
                     .then(function(respuesta) {
 
                         respuesta.json().then(function(datospaises) {
@@ -80,8 +80,12 @@ var iniciaMapa = () => {
                 
                               })
 
+                              console.log('Marcador: '+marcador);
+                              console.log('Registro: ' + registro);
+
+
                               if( registro.country == marcador.CountryName){
-  
+                                console.log
                                 let marker = new google.maps.Marker({
                                   map: map,
                                   position: new google.maps.LatLng(marcador.countryInfo.lat, marcador.countryInfo.long),
