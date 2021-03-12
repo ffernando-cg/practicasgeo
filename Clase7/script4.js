@@ -17,7 +17,7 @@ var iniciaMapa = () => {
 
       datos.forEach( marcador => {
 
-        fetch('paises.json')
+        fetch('https://corona.lmao.ninja/v2/countries')
         .then((res)=>{
           res.json().then( (datospaises) => {
             
