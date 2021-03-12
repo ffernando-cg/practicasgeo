@@ -10,7 +10,7 @@ var propiedades = {
 
 
 var iniciaMapa = () => {
-  fetch('https://corona.lmao.ninja/v2/countries')
+  fetch('paises.json')
   .then(
   (response) =>{
       const map = new google.maps.Map(document.getElementById('map'),propiedades);
