@@ -12,10 +12,10 @@ var propiedades = {
 var iniciaMapa = () => {
   fetch('paises.json')
   .then(
-  (response) =>{
+  function(datos){
       const map = new google.maps.Map(document.getElementById('map'),propiedades);
 
-      response.forEach(marcador => {
+      datos.forEach( marcador => {
 
         fetch('paises.json')
         .then((res)=>{
