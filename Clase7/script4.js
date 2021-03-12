@@ -17,14 +17,11 @@ var iniciaMapa = () => {
     
                 const map = new google.maps.Map(document.getElementById('map'), propiedades);
 
-                console.log(datos);
 
                 datos.forEach( marcador => {
-
-
                     fetch('https://corona.lmao.ninja/v3/covid-19/countries')
                     .then(function(respuesta) {
-
+                      console.log(marcador);
                         respuesta.json().then(function(datospaises) {
 
                             datospaises.forEach( registro => {
