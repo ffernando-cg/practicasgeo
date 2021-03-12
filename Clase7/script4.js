@@ -10,7 +10,7 @@ var propiedades = {
 
 
 var iniciaMapa = () => {
-  fetch('paises.json')
+  fetch('./paises.json')
   .then(
   function(datos){
       const map = new google.maps.Map(document.getElementById('map'),propiedades);
