@@ -25,19 +25,17 @@ var iniciaMapa = () => {
                         respuesta.json().then(function(datospaises) {
 
                             datospaises.forEach( registro => {
+                              
+                              if( registro.country == marcador.CountryName){
                               var informacion = `<strong>PAIS: </strong> ${registro.country}, casos: ${registro.cases} <br/> <img src="${registro.countryInfo.flag}"/>`;
 
                               var infowindow = new google.maps.InfoWindow({
                                 content: informacion
-                
-                              })
-
-
-                              if( registro.country == marcador.CountryName){
-                                console.log
+                              });
+                              
                                 let marker = new google.maps.Marker({
                                   map: map,
-                                  position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CaptialLongitude),
+                                  position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
                                   title: `${marcador.CountryName} : ${registro.cases}`
                                 });
                 
