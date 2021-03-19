@@ -29,7 +29,7 @@ var localidades = [
   {lat: -43.999792, lng: 170.463352}
 ];
 
-const iniciaMapa = () =>{
+var iniciaMapa = () =>{
   var map = new google.maps.Map(
     document.getElementById('map'),
     {

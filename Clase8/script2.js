@@ -3,7 +3,7 @@ var coords = {
   lng : -110.956896
 }
 
-const iniciaMapa = () =>{
+var iniciaMapa = () =>{
   var map = new google.maps.Map(
       $('#map'),
       {
