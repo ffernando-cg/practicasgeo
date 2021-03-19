@@ -33,7 +33,7 @@ function iniciaMapa() {
   var map = new google.maps.Map(
   document.getElementById('mapa'),
       {
-          center: coordenadas,
+          center: coords,
           zoom: 3
       }
   );
