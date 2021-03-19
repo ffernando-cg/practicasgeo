@@ -1,6 +1,6 @@
 var coords = {
-    lat : 29.099358,
-    lng : -110.956896
+    lat : 0,
+    lng : 0
 }
 
 var localidades = [
@@ -34,7 +34,7 @@ function iniciaMapa() {
   document.getElementById('map'),
       {
           center: coords,
-          zoom: 3
+          zoom: 1
       }
   );
   var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
