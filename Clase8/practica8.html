@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>Practica 8</title>
+  <style>
+    #map{
+      width: 100%;
+      height: 650px;
+    }
+    html, body{
+      height: 100%;
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 text-center">
+          <h1>Google Maps Idioms</h1>
+        </div>
+        <div class="col-6 text-center">
+          <select name="idioma" id="idioma" class="form-control" onchange="this.form.submit()">
+            <option value="es">Español</option>
+            <option value="en">Ingles</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japones</option>
+            <option value="ar">Arabe</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="./script2.js"></script>
+</body>
+</html>
