@@ -19,7 +19,7 @@ const idioma = urlParams.get('idioma');
 
 var script = document.createElement('script');
 
-$('#idioma').val(idioma);
+document.getElementById('idioma').value = idioma;
 
 script.src=`https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa&language=${idioma}" async defer`
 document.head.appendChild(script);
