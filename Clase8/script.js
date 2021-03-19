@@ -29,38 +29,38 @@ var localidades = [
   {lat: -43.999792, lng: 170.463352}
 ];
 
-var iniciaMapa = () =>{
+function iniciaMapa() {
   var map = new google.maps.Map(
-    document.getElementById('map'),
-    {
-      center:coords,
-      zoom:3,
-      mapTypeId:'terrain'
-    }
+  document.getElementById('mapa'),
+      {
+          center: coordenadas,
+          zoom: 3
+      }
   );
-
-  var labels = "ABCDEFGHIJKLMNOPQRSTUWXYZ"
-  var marcadores=[];
+  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var marcadores = [];
   var cuenta = 1;
-
   localidades.forEach( localidad => {
-    let marcador = new google.maps.Marker({
-      map: map,
-      position: localidad,
-      label: labels[ cuenta % labels.length]
-    })
 
-    marcadores.push(marcador);
-    cuenta++;
+      console.log(localidad);
+
+      let marcador = new google.maps.Marker({
+          map : map,
+          position: localidad,
+          label: labels[ cuenta % labels.length ]
+      });
+
+      marcadores.push(marcador);
+
+      cuenta++;
+
   });
-
-
-  var markerCluster = new MarkerCluster(map, marcadores, {
-    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-    gridSize: 100,
-    zoomOnClick: true,
-    maxZoom:10
-  })
+  var makerCluster = new MarkerClusterer(map, marcadores, {
+      imagePath : 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+      gridSize: 100,
+      zoomOnClick: true,
+      maxZoom: 10
+  });
 
   $('#btnRoadmap').click(function(){
     map.setMapTypeId('roadmap');
