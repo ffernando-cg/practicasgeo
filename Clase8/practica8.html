@@ -18,18 +18,35 @@
       margin: 0;
       padding: 0;
     }
+    .backgroundcolor-ej8{
+      background: linear-gradient(90deg, rgba(58,73,180,1) 0%, rgba(29,226,253,0.4853291658460259) 50%, rgba(252,69,69,1) 100%);
+      height: 100vh;
+    }
+    .bluecol{
+      color: cyan;
+    }
+    .redcol{
+      color:red
+    }
+    .yellowcol{
+      color:rgb(239, 243, 0)
+    }
+    .greencol{
+      color: green
+    }
   </style>
 </head>
 <body>
-  <form action="">
-  <div class="container-fluid">
+  <form>
+  <div class="container-fluid backgroundcolor-ej8">
     <div class="container">
       <div class="row">
-        <div class="col-6 text-center">
-          <h1>Google Maps Idioms</h1>
+        <div class="col-6 text-center text-white">
+          <h1><span class="bluecol">G</span><span class="redcol">o</span><span class="yellowcol">o</span><span class="bluecol">g</span><span class="greencol">l</span><span class="redcol">e</span> Maps Idioms</h1>
         </div>
         <div class="col-6 text-center">
-          <select name="idioma" id="idioma" class="form-control" onchange="this.form.submit()">
+          <select name="idioma" id="idioma" class="form-select" onchange="this.form.submit()" >
+            <option disabled selected>Selecciona una opción</option>
             <option value="es">Español</option>
             <option value="en">Ingles</option>
             <option value="it">Italian</option>
