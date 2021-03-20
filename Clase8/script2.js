@@ -5,7 +5,7 @@ var coords = {
 
 var iniciaMapa = () =>{
   var map = new google.maps.Map(
-      $('#map'),
+      document.getElementById('map'),
       {
         center:coords,
         zoom:3
