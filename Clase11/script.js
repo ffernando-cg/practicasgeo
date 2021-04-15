@@ -253,7 +253,10 @@ var customProps = {
 };
 
 
-var mapCustom = new google.maps.Map(document.getElementById('mapCustom'), customProps);
+var mapa_Custom = document.getElementById('mapCustom');
+
+var mapCustom = new google.maps.Map(mapa_Custom, customProps);
+
 mapCustom.mapTypes.set('style_map', styledMapType);
 mapCustom.setMapTypeId('style_map');
 
