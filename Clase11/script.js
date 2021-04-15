@@ -245,13 +245,13 @@ var customProps = {
     lng: -101.711598,
   },
   zoom: 14,
+  mapTypeControlOptions: {
+    mapTypeIds: ['style_map']
+  },
   disableDefaultUI: true,
   streetViewControl: true,
   streetViewControlOptions: {
     position: google.maps.ControlPosition.TOP_RIGHT
-  },
-  mapTypeControlOptions: {
-    mapTypeIds: ['style_map']
   }
 };
 
