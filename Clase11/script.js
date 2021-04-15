@@ -254,7 +254,6 @@ var customProps = {
 
 
 var mapCustom = new google.maps.Map(document.getElementById('mapCustom'), customProps);
-
 mapCustom.mapTypes.set('style_map', styledMapType);
 mapCustom.setMapTypeId('style_map');
 
