@@ -249,6 +249,9 @@ var customProps = {
   streetViewControl: true,
   streetViewControlOptions: {
     position: google.maps.ControlPosition.TOP_RIGHT
+  },
+  mapTypeControlOptions: {
+    mapTypeIds: ['style_map']
   }
 };
 
