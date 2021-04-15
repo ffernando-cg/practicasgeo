@@ -245,9 +245,7 @@ var customProps = {
     lng: -101.711598,
   },
   zoom: 14,
-  mapTypeControlOptions: {
-    mapTypeIds: ['style_map']
-  },
+  styles: styledMapType,
   disableDefaultUI: true,
   streetViewControl: true,
   streetViewControlOptions: {
@@ -257,10 +255,6 @@ var customProps = {
 
 
 var mapa_Custom = document.getElementById('mapCustom');
-
 var mapCustom = new google.maps.Map(mapa_Custom, customProps);
-
-mapCustom.mapTypes.set('style_map', styledMapType);
-mapCustom.setMapTypeId('style_map');
 
 }
