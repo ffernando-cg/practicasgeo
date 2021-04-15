@@ -63,10 +63,10 @@ function iniciaMapa() {
   }
   var props6 = {
     center: coords,
-    zoom:12,
+    zoom:18,
     restriction: {
       latLngBounds: limits,
-      strictBounds: false
+      strictBounds: true
     }
   };
   var map6 = new google.maps.Map(document.getElementById('map6'), props6);
