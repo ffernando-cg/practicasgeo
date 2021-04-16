@@ -1,7 +1,7 @@
 var service, infoWindow, map;
 
 $('#btnSearch').click(function(){
-  var searchValue = $('Search').val();
+  var searchValue = $('#SearchInput').val();
   var request = {
     query: searchValue,
     fields: ['place_id','name','formatted_address','icon','geometry']
