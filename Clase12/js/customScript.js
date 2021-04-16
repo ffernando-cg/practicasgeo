@@ -10,7 +10,7 @@ $('#btnSearch').click(function(){
   service = new google.maps.places.PlacesService(map);
 
   service.findPlaceFromQuery(request, function(res, status){
-    if(satuts === google.maps.places.PlacesServiceStatus.OK){
+    if(status === google.maps.places.PlacesServiceStatus.OK){
       for (let i = 0; i < res.length.length; i++) {
         createMarker(res[i]);
       }
