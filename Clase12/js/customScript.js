@@ -48,7 +48,7 @@ function iniciaMapa() {
     zoom:12
   };
 
-  infoWindow = new google.maps.infoWindow();
+  infoWindow = new google.maps.InfoWindow();
 
   map = new google.maps.Map(document.getElementById('map'), props1);
 }
