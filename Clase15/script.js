@@ -11,17 +11,10 @@ var coordenadas = {  lat: 21.152639, lng:  -101.711598 };
       fetch('municipios.json')
       .then( function(response){
           response.json().then( function(municipios){
-
             var datos = $('#data');
-
-
             var coordenadasVuelos=[];
-
             municipios.forEach( municipio => {
-
-
               coordenadasVuelos.push(municipio.coordenadas);
-
               var municipioCirculo = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity : 0.8,
