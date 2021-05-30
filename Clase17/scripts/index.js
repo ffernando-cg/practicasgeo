@@ -4,7 +4,7 @@ const listaLoggedIn = $('.logged-in');
 
 const configurarMenu = (user) => {
     if(user){
-      db.collection('usuarios').doc(user.uid).get().then( doc => {
+      db.collection('usuariosClase17').doc(user.uid).get().then( doc => {
           console.log(doc.data())
         $('.datosDeLaCuenta')
         .append($('<p>').text(`Nombre: ${doc.data().nombre}`))
