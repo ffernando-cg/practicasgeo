@@ -29,7 +29,8 @@ const obtieneAmigos = (data) => {
         zoom:14
     }
 
-    var map = new google.maps.Map($('#map'),props)
+    var mapa =  document.getElementById("map")
+    var map = new google.maps.Map(mapa,props)
 
     data.forEach(element => {
         inform = new google.maps.InfoWindow;
