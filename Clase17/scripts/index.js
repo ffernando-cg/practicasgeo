@@ -1,57 +1,66 @@
-const listaloggedout = document.querySelectorAll('.logged-out');
- const listaloggedin = document.querySelectorAll('.logged-in');
- const datosdelacuenta = document.querySelector('.datosdelacuenta');
- 
- const configuraMenu = (user) => {
-     if(user){
-        db.collection('usuarios').doc(user.uid).get().then( doc =>{
-            const html = `
-                <p>Nombre: ${ doc.data().nombre }</p>
-                <p>Correo: ${ user.email}</p>
-                <p>Teléfono: ${ doc.data().telefono }</p>
-                <p>Dirección: ${ doc.data().direccion }</p>
-                <p>Coordenadas: ${ doc.data().coordenadas.latitude } , ${ doc.data().coordenadas.longitude }</p>
-            `;
-            datosdelacuenta.innerHTML = html;
-        });
+const datosDeLaCuenta = $('.datosDeLaCuenta');
+const listaLoggedOut = $('.logged-out');
+const listaLoggedIn = $('.logged-in');
 
-        listaloggedin.forEach( item => item.style.display = 'block');
-        listaloggedout.forEach( item => item.style.display = 'none');
-     }
-     else
-     {
-        datosdelacuenta.innerHTML = '';
-        listaloggedin.forEach( item => item.style.display = 'none');
-        listaloggedout.forEach( item => item.style.display = 'block');
-     }
- }
- 
- const obtieneAmigos = (data) =>{
+const configurarMenu = (user) => {
+    if(user){
+      db.collection('usuarios').doc(user.uid).get().then( doc => {
+        $('.datosDeLaCuenta')
+        .append($('<p>').text(`Nombre: ${doc.data().nombre}`))
+        .append($('<p>').text(`Correo: ${user.email}`))
+        .append($('<p>').text(`Teléfono: ${doc.data().telefono}`))
+        .append($('<p>').text(`Direccion: ${doc.data().direccion}`))
+        .append($('<p>').text(`Coordenadas: ${doc.data().coordenadas.latitude} , ${doc.data().coordenadas.longitude}`));
+      })
+      $('.logged-in').show();
+      $('.logged-out').hide();
+    }else{
+      $('.logged-in').hide();
+      $('.logged-out').show();
+    }
+}
 
-    var propiedades = { 
-        center: { 
-          lat: 21.152639,
-          lng: -101.711598 
-        }, 
-        zoom: 14 
+const obtieneAmigos = (data) => {
+    var props = {
+        center: {
+            lat:21.152639,
+            lng:-101.711598
+        },
+        zoom:14
     }
 
-    var map = new google.maps.Map($('#map'), propiedades);
+    var map = new google.maps.Map($('#map'),props)
 
+    data.forEach(element => {
+        inform = new google.maps.InfoWindow;
 
-    data.forEach( doc => {
-        
-        informacion = new google.maps.InfoWindow;
+        var pos ={
+            lat: element.data().coordenadas.latitude,
+            lng: element.data().coordenadas.longitude
+        }
 
-        var pos = { 
-            lat: doc.data().coordenadas.latitude,
-            lng: doc.data().coordenadas.longitude
-        };
-
-        informacion.setPosition(pos);
-        informacion.setContent(doc.data().nombre);
-        informacion.open(map);
-
+        inform.setPosition(pos)
+        inform.setContent(element.data().nombre);
+        inform.open(map)
     });
 
- };
+}
+
+const entrarGoogle = () => {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).then( function(res){
+    var token = result.credential.accessToken;
+
+    var user = res.user;
+
+    $('.datosDeLaCuenta').empty();
+    $('.datosDeLaCuenta')
+    .append($('<p>').text(`Nombre: ${doc.data().nombre}`))
+    .append($('<p>').text(`Correo: ${user.email}`))
+    .append($('<img>').attr('src',`${user.photoURL}`));
+  }).catch( function (err){
+    console.log(err);
+  });
+
+  
+}
