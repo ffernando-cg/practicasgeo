@@ -1,30 +1,28 @@
 
 auth.onAuthStateChanged( user =>{
-
     if(user){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition( posit => {
 
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition( posit => {
-
-            db.collection('usuariosClase17').doc(user.uid).update({
-                coordenadas:{
-                    latitude: posit.coords.latitude,
-                    longitude: posit.coords.longitude
-                }
+                db.collection('usuariosClase17').doc(user.uid).update({
+                    coordenadas:{
+                        latitude: posit.coords.latitude,
+                        longitude: posit.coords.longitude
+                    }
+                });
             });
-        });
-    }
+        }
 
-    
-      db.collection('usuariosClase17').onSnapshot( snap => {
-        obtieneAmigos(snap.docs);
-      });
-      configurarMenu(user);
-    }
-    else{
-      obtieneAmigos([]);
-      configurarMenu();
-    }
+        
+        db.collection('usuariosClase17').onSnapshot( snap => {
+            obtieneAmigos(snap.docs);
+        });
+        configurarMenu(user);
+        }
+        else{
+        obtieneAmigos([]);
+        configurarMenu();
+        }
   })
   
   const formaIngresar = $('#formaIngresar')
