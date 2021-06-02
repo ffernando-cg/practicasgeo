@@ -1,10 +1,4 @@
-var props= {
-  center:{
-    lat:0,
-    lng:0
-  },
-  zoom:14
-};
+var props= {}
 window.onload =function(){
   var id = window.location.toString().split('#')[1]
   console.log(id);
@@ -31,6 +25,15 @@ window.onload =function(){
 
 var iniciaMapa = () =>{  
 
+    if(props=={}){
+      props= {
+        center:{
+          lat:25.150,
+          lng:50.120
+        },
+        zoom:14
+      };
+    }
   const map = new google.maps.Map($('#map'), props);
 
       
