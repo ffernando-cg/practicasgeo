@@ -45,7 +45,7 @@ var iniciaMapa = () =>{
       map.setCenter(props);
 
       const infowindow = new google.maps.InfoWindow({
-        content: info
+        content: 'Lugar'
       })
 
       marker.addListener('click', () =>{
