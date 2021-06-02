@@ -13,7 +13,7 @@ window.onload =function(){
     $('#txtPrecio').text(`$${selectedData.Precio} Pesos Mexicanos`)
 
 
-    CoordsLat = consoleselectedData.Coords.latitude;
+    CoordsLat = selectedData.Coords.latitude;
     CoordsLng = selectedData.Coords.longitude;
 
     iniciaMapa();
@@ -23,9 +23,6 @@ window.onload =function(){
 };
 
 const iniciaMapa = () =>{  
-
   $('#imagenmapa').attr('src',`https://maps.googleapis.com/maps/api/staticmap?center= ${coordenadas}&zoom=18&size=800x800&key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24`);
-  
-
 }
 
