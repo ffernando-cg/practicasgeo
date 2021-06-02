@@ -1,0 +1,44 @@
+[
+  {
+    "mixologia":{
+      "vodka":"Ciroc",
+      "ron":"Bacardí",
+      "tequila":"Maestro Dobel Diamante"
+    },
+    "rocas":{
+      "bacanora":"Bacanora Sonorense",
+      "whiskey":"Fireball Cinnamon"
+    }
+  },
+  {
+    "añejados":{
+      "tequila":"Tequila 1800 Añejo",
+      "whiskey":"Buchanans DeLuxe"
+    },
+    "nuevacoleccion":{
+      "tequila":"Gran Malo (por LuisitoComunica)",
+      "vino":"Ivanna (por Anna Sarelly)",
+      "mezcal":"Dos Hombres (por Aaron Paul y Bryan Cranston)"
+    },
+    "confiables":{
+      "hidromiel":"Castreña Hidro Miel",
+      "tequila":"Jose Cuervo Tradicional",
+      "sake":"Sayuri"
+    }
+  },
+  {
+    "fiesta":{
+      "cremairlandesa":"Baileys",
+      "licordehierbas":"Jagermeister",
+      "cerveza":"Moonchild American Stout"
+    },
+    "enpareja":{
+      "vino":"Casillero del diablo",
+      "ginebra":"Puerto de indias de fresa"
+    },
+    "solitario":{
+      "vino":"La Pieve",
+      "whiskey":"Crown Royal"
+    }
+  }
+]
