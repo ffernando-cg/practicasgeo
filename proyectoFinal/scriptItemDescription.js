@@ -23,7 +23,12 @@ window.onload =function(){
 };
 
 const iniciaMapa = () =>{  
-  var coordenadas = `${CoordsLat} , ${CoordsLng}`;
-  $('#imagenmapa').attr('src',`https://maps.googleapis.com/maps/api/staticmap?center= ${coordenadas}&zoom=14&key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24`);
+  var coords= { CoordsLat, CoordsLng }
+
+  var props1 = {
+    center: coords,
+    zoom:12
+  };
+  var map = new google.maps.Map(document.getElementById('map'), props1);
 }
 
