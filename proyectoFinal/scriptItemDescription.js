@@ -37,8 +37,8 @@ console.log(coords);
 
   let marker = new google.maps.Marker({
     map: map,
-    position: new google.maps.LatLng(marcador.latitude, marcador.longitude),
-    title: marcador.name
+    position: new google.maps.LatLng(coords.lat, coords.lng),
+    title: 'Lugar de origen'
   })
 
 };
