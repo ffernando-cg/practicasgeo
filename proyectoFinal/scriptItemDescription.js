@@ -1,4 +1,10 @@
-var props= {};
+var props= {
+  center:{
+    lat:0,
+    lng:0
+  },
+  zoom:14
+};
 window.onload =function(){
   var id = window.location.toString().split('#')[1]
   console.log(id);
