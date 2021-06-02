@@ -1,4 +1,9 @@
-var CoordsLat, CoordsLng;
+var coords = {
+  lat:0,
+  lng:0
+};
+
+
 
 
 window.onload =function(){
@@ -13,8 +18,8 @@ window.onload =function(){
     $('#txtPrecio').text(`$${selectedData.Precio} Pesos Mexicanos`)
 
 
-    CoordsLat = selectedData.Coords.latitude;
-    CoordsLng = selectedData.Coords.longitude;
+    coords.lat = selectedData.Coords.latitude;
+    coords.lng = selectedData.Coords.longitude;
 
     iniciaMapa();
   
@@ -22,13 +27,19 @@ window.onload =function(){
 
 };
 
-const iniciaMapa = () =>{  
-  var coords= { CoordsLat, CoordsLng }
+var iniciaMapa = () => {
 
-  var props1 = {
+  var propiedades = {
     center: coords,
-    zoom:12
-  };
-  var map = new google.maps.Map(document.getElementById('map'), props1);
-}
+    zoom:2
+  }
+  const map = new google.maps.Map(document.getElementById('map'),propiedades);
+
+  let marker = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(marcador.latitude, marcador.longitude),
+    title: marcador.name
+  })
+
+};
 
