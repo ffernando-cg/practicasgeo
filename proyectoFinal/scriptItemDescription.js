@@ -30,10 +30,7 @@ window.onload =function(){
 };
 
 var iniciaMapa = () =>{  
-  if(props={}){
-    return
-  }
-  else{
+
   const map = new google.maps.Map($('#map'), props);
 
       
@@ -56,5 +53,5 @@ var iniciaMapa = () =>{
       })
 
       infowindow.open(map, marker);
-    }
+
 }
