@@ -3,7 +3,7 @@ var coords = {
   lng:0
 };
 
-
+var info = `<h1>Lugar de origen de la bebida</h1><p>De este lugar en particular es de donde esta bebida, hasta tu casa, en caso de que quieras comprarla</p><br/><p>Tiempo estimado de entrega: 20 días</p>`
 
 
 window.onload =function(){
@@ -34,11 +34,26 @@ var iniciaMapa = () => {
   }
   const map = new google.maps.Map(document.getElementById('map'),propiedades);
 
-  let marker = new google.maps.Marker({
-    map: map,
-    position: new google.maps.LatLng(coords.lat, coords.lng),
-    title: 'Lugar de origen'
-  })
 
+
+    let propiedadesMarcador = {
+      position: coords,
+      map,
+      title:'Lugar de origen de la bebida'
+    }
+
+    const marker = new google.maps.Marker(propiedadesMarcador);
+
+    map.setCenter(coords);
+
+    const infowindow = new google.maps.InfoWindow({
+      content: info
+    })
+
+    marker.addListener('click', () =>{
+      infowindow.open(map, marker);
+    })
+
+    infowindow.open(map, marker);
 };
 
