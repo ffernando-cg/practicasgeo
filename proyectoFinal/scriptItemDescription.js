@@ -45,7 +45,7 @@ var iniciaMapa = () =>{
       map.setCenter(props);
 
       const infowindow = new google.maps.InfoWindow({
-        content: 'Lugar'
+        content: 'Lugar de origen de la bebida'
       })
 
       marker.addListener('click', () =>{
