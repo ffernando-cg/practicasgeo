@@ -223,8 +223,8 @@ auth.onAuthStateChanged( user =>{
 
  
 const getAllBeverages = (data, user) => {
-  $('catalogoSecc1').empty();
-  $('catalogoSecc2').empty();
+  $('#catalogoSecc1').empty();
+  $('#catalogoSecc2').empty();
   var counterChangeSeccion =0;
   if(data.length){
     data.forEach(element => {
