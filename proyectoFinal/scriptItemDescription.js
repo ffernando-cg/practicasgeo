@@ -28,7 +28,6 @@ window.onload =function(){
 };
 
 var iniciaMapa = () => {
-console.log(coords);
   var propiedades = {
     center: coords,
     zoom:2
