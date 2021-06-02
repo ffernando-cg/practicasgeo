@@ -239,9 +239,6 @@ const getAllBeverages = (data, user) => {
               <div class="product-item logged-in">
                 <a href="itemDescription.html#${element.id}" ><i class="bi bi-zoom-in"></i></a>
               </div>
-              <div class="product-item logged-in">
-                <a href="#"><i class="bi bi-cart-plus"></i></a>
-              </div>
             </div>
           </div> 
           </div>
