@@ -1,4 +1,6 @@
-var props= {}
+var props= {};
+
+
 window.onload =function(){
   var id = window.location.toString().split('#')[1]
   console.log(id);
@@ -23,13 +25,13 @@ window.onload =function(){
 
 };
 
-var iniciaMapa = () =>{  
+const iniciaMapa = () =>{  
 
     if(props=={}){
       props= {
         center:{
-          lat:25.150,
-          lng:50.120
+          lat:-10.06526,
+          lng:-24.83377
         },
         zoom:14
       };
