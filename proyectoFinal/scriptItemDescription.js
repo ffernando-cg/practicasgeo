@@ -1,4 +1,4 @@
-var props= {};
+var CoordsLat, CoordsLng;
 
 
 window.onload =function(){
@@ -12,13 +12,10 @@ window.onload =function(){
     $('#tituloNombreProducto, #tituloNombreProducto2').text(`${selectedData.Nombre}`)
     $('#txtPrecio').text(`$${selectedData.Precio} Pesos Mexicanos`)
 
-    props = {
-      center: {
-        lat : Number(selectedData.Coords.latitude),
-        lng : Number(selectedData.Coords.longitude)
-      },
-      zoom: 14
-    };
+
+    CoordsLat = consoleselectedData.Coords.latitude;
+    CoordsLng = selectedData.Coords.longitude;
+
     iniciaMapa();
   
   });
@@ -27,36 +24,8 @@ window.onload =function(){
 
 const iniciaMapa = () =>{  
 
-    if(props=={}){
-      props= {
-        center:{
-          lat:-10.06526,
-          lng:-24.83377
-        },
-        zoom:14
-      };
-    }
-  const map = new google.maps.Map($('#map'), props);
-
-      
-      let propiedadesMarcador = {
-        position: props,
-        map,
-        title:'Lugar de origen de la bebida'
-      }
-
-      const marker = new google.maps.Marker(propiedadesMarcador);
-
-      map.setCenter(props);
-
-      const infowindow = new google.maps.InfoWindow({
-        content: 'Lugar de origen de la bebida'
-      })
-
-      marker.addListener('click', () =>{
-        infowindow.open(map, marker);
-      })
-
-      infowindow.open(map, marker);
+  $('#imagenmapa').attr('src',`https://maps.googleapis.com/maps/api/staticmap?center= ${coordenadas}&zoom=18&size=800x800&key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24`);
+  
 
 }
+
