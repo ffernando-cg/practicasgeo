@@ -233,7 +233,6 @@ const getAllBeverages = (data, user) => {
           `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 colbox-1">
           <div class="box-area" style="background-image: url(./img/${bebida.Image});">
           <div class="icon">
-            <h4 class="product-item-title">${bebida.Nombre}</h4>
             <div class="bottom">
               <div class="product-item">
                 <h4 class="text-stroke-white">Precio: ${bebida.Precio}</h4>
@@ -244,6 +243,7 @@ const getAllBeverages = (data, user) => {
             </div>
           </div> 
           </div>
+          <h4 class="product-item-title">${bebida.Nombre}</h4>
         </div>`
         if(counterChangeSeccion<=3){
           $('#catalogoSecc1').append(queryPaster)
