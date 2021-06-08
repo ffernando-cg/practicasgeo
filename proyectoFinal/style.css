@@ -522,6 +522,7 @@ ul{
 }
 
 .product-item-title{
+  margin-top: 1vh;
   color: #000;
   text-shadow: 4px 4px 6px rgba(150, 150, 150, 1);
 }
